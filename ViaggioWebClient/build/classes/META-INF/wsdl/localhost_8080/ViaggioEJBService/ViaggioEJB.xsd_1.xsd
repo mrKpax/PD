@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://viaggio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://viaggio/">
+
+<xs:element name="aggiornaViaggio" type="tns:aggiornaViaggio"/>
+
+<xs:element name="aggiornaViaggioResponse" type="tns:aggiornaViaggioResponse"/>
+
+<xs:element name="aggiungiViaggio" type="tns:aggiungiViaggio"/>
+
+<xs:element name="aggiungiViaggioResponse" type="tns:aggiungiViaggioResponse"/>
+
+<xs:element name="rimuoviViaggio" type="tns:rimuoviViaggio"/>
+
+<xs:element name="rimuoviViaggioResponse" type="tns:rimuoviViaggioResponse"/>
+
+<xs:element name="trovaData" type="tns:trovaData"/>
+
+<xs:element name="trovaDataResponse" type="tns:trovaDataResponse"/>
+
+<xs:element name="trovaDestinazione" type="tns:trovaDestinazione"/>
+
+<xs:element name="trovaDestinazioneResponse" type="tns:trovaDestinazioneResponse"/>
+
+<xs:element name="trovaId" type="tns:trovaId"/>
+
+<xs:element name="trovaIdResponse" type="tns:trovaIdResponse"/>
+
+<xs:element name="trovaLiberi" type="tns:trovaLiberi"/>
+
+<xs:element name="trovaLiberiResponse" type="tns:trovaLiberiResponse"/>
+
+<xs:element name="trovaNDisponibili" type="tns:trovaNDisponibili"/>
+
+<xs:element name="trovaNDisponibiliResponse" type="tns:trovaNDisponibiliResponse"/>
+
+<xs:element name="viaggio" type="tns:viaggio"/>
+
+<xs:complexType name="trovaLiberi">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaLiberiResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:viaggio" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viaggio">
+<xs:sequence>
+<xs:element name="conducente" type="xs:string" minOccurs="0"/>
+<xs:element name="datap" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="destinazione" type="xs:string" minOccurs="0"/>
+<xs:element name="disponibili" type="xs:int"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="partenza" type="xs:string" minOccurs="0"/>
+<xs:element name="utenti" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiungiViaggio">
+<xs:sequence>
+<xs:element name="arg0" type="tns:viaggio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiungiViaggioResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaData">
+<xs:sequence>
+<xs:element name="arg0" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:viaggio" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:viaggio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaNDisponibili">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaNDisponibiliResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaDestinazione">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaDestinazioneResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:viaggio" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rimuoviViaggio">
+<xs:sequence>
+<xs:element name="arg0" type="tns:viaggio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rimuoviViaggioResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="aggiornaViaggio">
+<xs:sequence>
+<xs:element name="arg0" type="tns:viaggio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiornaViaggioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:viaggio" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
